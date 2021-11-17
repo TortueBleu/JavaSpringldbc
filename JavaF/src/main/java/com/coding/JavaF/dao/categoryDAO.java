@@ -21,5 +21,4 @@ public class categoryDAO {
         List<Category> List = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
         return List;
     }
-fkjvbqsjfqljdqdslqf
 }
