@@ -1,4 +1,4 @@
 package com.coding.JavaF.models.viewmodels;
 
-public class categoryModels {
+public class categoryViewModels {
 }
