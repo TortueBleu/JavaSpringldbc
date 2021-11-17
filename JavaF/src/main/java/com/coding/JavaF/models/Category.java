@@ -4,6 +4,13 @@ public class Category {
     private String id;
     private String name;
 
+
+    public Category(String id, String name){
+        this.id = id;
+        this.name = name;
+
+    }
+
     public String getId() {
         return id;
     }
@@ -19,5 +26,5 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-main
+
 }

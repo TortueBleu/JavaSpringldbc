@@ -7,8 +7,10 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 @Repository
 public class categoryDAO {
@@ -18,8 +20,11 @@ public class categoryDAO {
     public List<Category> listAll() {
         String sql = "SELECT * FROM Category";
 
-        List<Category> List = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
-        return List;
+        List<Category> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
+
+        return list;
     }
 
-}
+
+
+    }
