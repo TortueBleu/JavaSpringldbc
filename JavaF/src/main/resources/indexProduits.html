@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<h1> Liste des Produits </h1>
+<table>
+    <thead>
+    <tr><td>Nom</td><td>Type</td><td>Rating</td></tr>
+    </thead>
+    <tbody>
+    <tr th:each="Produits : ${listProduits}">
+        <td th:text="${Produits.name}"></td>
+        <td th:text="${Produits.type}"></td>
+        <td th:text="${Produits.rating}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
