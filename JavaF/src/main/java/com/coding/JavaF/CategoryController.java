@@ -22,12 +22,7 @@ public class CategoryController {
     //    model.addAttribute("listCategory", CategoryDAO.listAll());
     //    return "indexCategory";
 
-    //  }
-
-
-
-
-
+    //  }ca
     @RequestMapping("/categories")
     public String indexCategory(Model model) {
         model.addAttribute("listCategory", categoryService.listAll());
@@ -48,32 +43,26 @@ public class CategoryController {
         return categoryService.listAll();
     }
 
-    @RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
-    public String add (Model model){
-        model.addAttribute("categoriesForm", new CategoryViewModels());
-        String antoine = "test";
-        System.out.println(antoine);
-        return antoine;
+
+   @RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
+    public int add (@RequestBody Category c){
+        return categoryService.add(c);
     }
 
-    //@RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
-    /*public String addPost(Model model, @ModelAttribute("categoriesForm") CategoryViewModels categoryViewModels){
-
+   /* @RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
+    public String addPost(Model model, @ModelAttribute("categoriesForm") CategoryViewModels categoryViewModels){
         if (categoryViewModels.getName() != null && categoryViewModels.getName().length() > 0){
             Category category = new Category();
             category.setId(categoryViewModels.getId());
             category.setName(categoryViewModels.getName());
             categoryService.add(category);
-
-            return "redirect:/categories";
+            return "redirect:/categories/affichage";
         }
         //errorMessage = "Nom obligatoire";
-        //model.addAttribute("erroreMessage", errrorMessage);
+        //model.addAttribute("errorMessage", errrorMessage);
         return "add";
-    }
-
-
-    @RequestMapping(value = {"/categories/update"}, method = RequestMethod.PATCH)
+    }*/
+    /*@RequestMapping(value = {"/categories/update"}, method = RequestMethod.PATCH)
     public String update(Model model, @ModelAttribute("categoriesUpdate") CategoryViewModels categoryViewModels){
         if (){
             Category category = new Category();
@@ -87,7 +76,7 @@ public class CategoryController {
         //model.addAttribute("erroreMessage", errroMessage);
         return "";
     }
-
+*/
 
    // @RequestMapping(value = {"/categrories/delete"}, method = RequestMethod.DELETE)
     //public String delete(Model model){
@@ -95,7 +84,7 @@ public class CategoryController {
     //}
 
 
-*/
+
 
 }
 

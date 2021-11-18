@@ -21,6 +21,7 @@ public class ProductsDAO {
         return list;
     }
 
+
     String sql = "INSERT INTO Products (type, rathing, fullname, email) VALUES (?, ?, ?, ?)";
 
 }
