@@ -16,7 +16,7 @@ public class JavaFApplication {
 				.singletonMap("server.port", "8083"));
 		app.run(args);
 
-	//	SpringApplication.run(JavaFApplication.class, args);
+
 	}
 
 }
