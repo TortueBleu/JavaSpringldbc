@@ -1,7 +1,6 @@
 package com.coding.JavaF.dao;
 
 import com.coding.JavaF.models.Products;
-import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

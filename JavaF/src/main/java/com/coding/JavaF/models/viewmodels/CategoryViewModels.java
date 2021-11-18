@@ -1,6 +1,6 @@
-package com.coding.JavaF.models;
+package com.coding.JavaF.models.viewmodels;
 
-public class Category {
+public class CategoryViewModels {
     private String id;
     private String name;
 

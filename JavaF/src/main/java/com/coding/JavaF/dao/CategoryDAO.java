@@ -1,36 +1,36 @@
 package com.coding.JavaF.dao;
 
 
-import jdk.jfr.Category;
+import com.coding.JavaF.models.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+
 
 @Repository
 public class CategoryDAO {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
-    public List<Category> listAll() {
+    private static JdbcTemplate jdbcTemplate;
+
+    public static List<Category> listAll() {
         String sql = "SELECT * FROM Category";
 
         List<Category> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
 
         return list;
     }
-<<<<<<< HEAD:JavaF/src/main/java/com/coding/JavaF/dao/categoryDAO.java
-}
-=======
 
 
-
-
-
+    public int add(Category c) {
+        String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
+        return jdbcTemplate.update(sql, c.getId(), c.getName());
     }
->>>>>>> anais:JavaF/src/main/java/com/coding/JavaF/dao/CategoryDAO.java
+
+
+    public static void save(Category cat) {
+    }
+
+}
+
