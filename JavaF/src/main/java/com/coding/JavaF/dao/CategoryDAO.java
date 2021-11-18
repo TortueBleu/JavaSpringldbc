@@ -24,7 +24,7 @@ public class CategoryDAO {
 
 
     public int add(Category c) {
-            String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
+        String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
         return jdbcTemplate.update(sql, c.getId(), c.getName());
     }
 
@@ -33,3 +33,4 @@ public class CategoryDAO {
     }
 
 }
+

@@ -24,7 +24,11 @@ public class CategoryController {
     //  }
 
 
+
     @RequestMapping("/category")
+
+    @RequestMapping("/categories")
+
     public String indexCategory(Model model) {
         model.addAttribute("listCategory", categoryService.listAll());
         return "indexCategory";
@@ -48,4 +52,3 @@ public class CategoryController {
 
     }
 }
-
