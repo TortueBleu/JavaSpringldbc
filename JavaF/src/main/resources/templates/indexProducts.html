@@ -10,10 +10,10 @@
     <tr><td>Nom</td><td>Type</td><td>Rating</td></tr>
     </thead>
     <tbody>
-    <tr th:each="Produits : ${listProduits}">
-        <td th:text="${Produits.name}"></td>
-        <td th:text="${Produits.type}"></td>
-        <td th:text="${Produits.rating}"></td>
+    <tr th:each="Produits : ${listProducts}">
+        <td th:text="${products.name}"></td>
+        <td th:text="${products.type}"></td>
+        <td th:text="${products.rating}"></td>
     </tr>
     </tbody>
 </table>
