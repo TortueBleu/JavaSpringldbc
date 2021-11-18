@@ -3,6 +3,7 @@ package com.coding.JavaF.dao;
 
 import com.coding.JavaF.models.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,10 +12,10 @@ import java.util.List;
 
 @Repository
 public class CategoryDAO {
+@Autowired
+    private JdbcTemplate jdbcTemplate;
 
-    private static JdbcTemplate jdbcTemplate;
-
-    public static List<Category> listAll() {
+    public List<Category> listAll() {
         String sql = "SELECT * FROM Category";
         List<Category> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
         return list;
@@ -31,13 +32,13 @@ public class CategoryDAO {
     }
 
 
-    public int delete(Category c){
+    /*public int delete(Category c){
         String sql = "DELETE FROM Category WHERE name=?";
         return jdbcTemplate.delete(sql, c.getName());
     }
+*/
 
-
-    public static void save(Category cat) {
+    public  void save(Category cat) {
     }
 }
 

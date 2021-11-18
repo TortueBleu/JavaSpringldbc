@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class CategoryController {
 
 
@@ -32,14 +32,6 @@ public class CategoryController {
     public String indexCategory(Model model) {
         model.addAttribute("listCategory", categoryService.listAll());
         return "indexCategory";
-
-
-        //   @RequestMapping("/category")
-//    public List<Category> getAllCategories() {
-        //       return CategoryDAO.listAll();
-        //   }
-
-
         //  @PostMapping("/add")
         //   public @ResponseBody String addNewCategories(@RequestParam String id, @RequestParam String name){
 
@@ -50,15 +42,22 @@ public class CategoryController {
         //     return "SET OK";
 
     }
-
-    @RequestMapping(value = {"/categories/add"}, method = RequestMethod.GET)
-    public String add (Model model){
-        model.addAttribute("categoriesForm", new CategoryViewModels());
-        return "add";
+    @RequestMapping(value = {"/categories/affichage"}, method = RequestMethod.GET)
+    public List<Category> getAllCategories()
+    {
+        return categoryService.listAll();
     }
 
     @RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
-    public String addPost(Model model, @ModelAttribute("categoriesForm") CategoryViewModels categoryViewModels){
+    public String add (Model model){
+        model.addAttribute("categoriesForm", new CategoryViewModels());
+        String antoine = "test";
+        System.out.println(antoine);
+        return antoine;
+    }
+
+    //@RequestMapping(value = {"/categories/add"}, method = RequestMethod.POST)
+    /*public String addPost(Model model, @ModelAttribute("categoriesForm") CategoryViewModels categoryViewModels){
 
         if (categoryViewModels.getName() != null && categoryViewModels.getName().length() > 0){
             Category category = new Category();
@@ -68,8 +67,8 @@ public class CategoryController {
 
             return "redirect:/categories";
         }
-        errorMessage = "Nom obligatoire";
-        model.addAttribute("erroreMessage", errroMessage);
+        //errorMessage = "Nom obligatoire";
+        //model.addAttribute("erroreMessage", errrorMessage);
         return "add";
     }
 
@@ -84,19 +83,19 @@ public class CategoryController {
 
             return "redirect:/categories";
         }
-        errorMessage = "";
-        model.addAttribute("erroreMessage", errroMessage);
+        //errorMessage = "";
+        //model.addAttribute("erroreMessage", errroMessage);
         return "";
     }
 
 
-    @RequestMapping(value = {"/categrories/delete"}, method = RequestMethod.DELETE)
-    public String delete(Model model){
+   // @RequestMapping(value = {"/categrories/delete"}, method = RequestMethod.DELETE)
+    //public String delete(Model model){
         
-    }
+    //}
 
 
-
+*/
 
 }
 
