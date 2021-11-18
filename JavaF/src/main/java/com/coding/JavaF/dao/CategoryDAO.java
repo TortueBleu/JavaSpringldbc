@@ -16,21 +16,28 @@ public class CategoryDAO {
 
     public static List<Category> listAll() {
         String sql = "SELECT * FROM Category";
-
         List<Category> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Category.class));
-
         return list;
     }
-
 
     public int add(Category c) {
         String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
         return jdbcTemplate.update(sql, c.getId(), c.getName());
     }
 
+    public int update(Category c){
+        String sql = "UPDATE Category SET id=?, name=?";
+        return jdbcTemplate.update(sql,c.getId(),c.getName());
+    }
+
+
+    public int delete(Category c){
+        String sql = "DELETE FROM Category WHERE name=?";
+        return jdbcTemplate.delete(sql, c.getName());
+    }
+
 
     public static void save(Category cat) {
     }
-
 }
 
