@@ -19,6 +19,8 @@ public class ProductsDAO {
         List<Products> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Products.class));
 
         return list;
-
     }
+
+    String sql = "INSERT INTO Products (type, rathing, fullname, email) VALUES (?, ?, ?, ?)";
+
 }

@@ -25,6 +25,9 @@ public class CategoryController {
     //  }
 
 
+
+
+
     @RequestMapping("/categories")
     public String indexCategory(Model model) {
         model.addAttribute("listCategory", categoryService.listAll());

@@ -14,10 +14,8 @@ public class ProductsController {
     private ProductsDAO productsService;
 
     @RequestMapping("/products")
-    public String indexProducts(Model model){
+    public String indexProducts(Model model) {
         model.addAttribute("listProducts", productsService.listAll());
         return "indexProducts";
-
     }
-
-    }
+}
