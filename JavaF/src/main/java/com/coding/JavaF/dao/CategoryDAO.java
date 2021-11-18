@@ -2,7 +2,7 @@ package com.coding.JavaF.dao;
 
 
 import com.coding.JavaF.models.Category;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.coding.JavaF.models.Products;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -23,7 +23,8 @@ public class CategoryDAO {
     }
 
 
-    public int add(Category c) {
+
+    public static int add(Category c) {
         String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
         return jdbcTemplate.update(sql, c.getId(), c.getName());
     }

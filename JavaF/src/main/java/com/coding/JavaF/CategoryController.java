@@ -25,7 +25,7 @@ public class CategoryController {
 
 
 
-    @RequestMapping("/category")
+ //   @RequestMapping("/category")
 
     @RequestMapping("/categories")
 
