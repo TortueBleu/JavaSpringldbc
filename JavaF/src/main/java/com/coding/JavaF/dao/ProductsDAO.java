@@ -20,9 +20,7 @@ public class ProductsDAO {
         List<Products> list = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Products.class));
 
         return list;
-
     }
-
 
     public List<Products> findbyId(){
     String sql = "SELECT products WHERE id=?";

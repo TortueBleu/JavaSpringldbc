@@ -19,7 +19,6 @@ public class ProductsController {
     @Autowired
     private ProductsDAO productsService;
 
-
   // récupérer tous les produits
 
     @GetMapping("/products")
@@ -60,6 +59,8 @@ public class ProductsController {
 
 
     // mettre à jour un produit
+
+
 
     }
 }
