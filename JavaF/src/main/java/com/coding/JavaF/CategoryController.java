@@ -37,7 +37,7 @@ public class CategoryController {
         //     return "SET OK";
 
     }
-    @RequestMapping(value = {"/categories/affichage"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/categories"}, method = RequestMethod.GET)
     public List<Category> getAllCategories()
     {
         return categoryService.listAll();
@@ -76,12 +76,12 @@ public class CategoryController {
         //model.addAttribute("erroreMessage", errroMessage);
         return "";
     }
-*/
 
-   // @RequestMapping(value = {"/categrories/delete"}, method = RequestMethod.DELETE)
-    //public String delete(Model model){
-        
-    //}
+
+   @RequestMapping(value = {"/categrories/delete"}, method = RequestMethod.DELETE)
+    public int delete(){
+       return
+    }*/
 
 
 
