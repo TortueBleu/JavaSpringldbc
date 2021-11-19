@@ -26,20 +26,15 @@ public class CategoryDAO {
 
     public int add(Category c) {
         String sql = "INSERT INTO Category (id, name) VALUES (?, ?);";
-        return jdbcTemplate.update(sql, c.getId(), c.getName());
+        return jdbcTemplate.update(sql, c.getId(),c.getName());
     }
 
-    public int update(Category c){
+    public int put(Category c){
         String sql = "UPDATE Category SET id=?, name=?";
         return jdbcTemplate.update(sql,c.getId(),c.getName());
     }
 
-
-    /*public int delete(Category c){
-        String sql = "DELETE FROM Category WHERE name=?";
-        return jdbcTemplate.delete(sql, c.getName());
-    }
-*/
-
-}
-
+ public int delete(Category c){
+        String sql = "DELETE FROM Category WHERE id=?";
+        return jdbcTemplate.update(sql, c.getId());
+    }}

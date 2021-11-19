@@ -30,7 +30,6 @@ public class ProductsDAO {
 
     public int add(Products p) {
         String sql = "INSERT INTO products ('id', 'name', 'rating, 'type','createdAt', 'categoryId') VALUES (?,?,?,?,?,?);";
-
         return jdbcTemplate.update(sql, p.getId(), p.getName(), p.getType(), p.getRating(), p.getCreatedAt(), p.getCategoryId());
     }
 
@@ -40,15 +39,15 @@ public class ProductsDAO {
     }
 
 
-  //  public int delete(Products p){
-  //      String sql = "DELETE products WHERE id = ?";
- //       return  jdbcTemplate.delete(sql);
- //   }
-
-
-    public Products findById(Long userId) {
-        String sql = "SELECT * FROM products WHERE id=? ;";
-        return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Products.class), userId);
+    public int delete(Products p){
+        String sql = "DELETE products WHERE id = ?";
+        return  jdbcTemplate.update(sql);
     }
+
+
+ //   public Products findById(Long userId) {
+  //      String sql = "SELECT * FROM products WHERE id=? ;";
+  //      return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Products.class), userId);
+ //   }
 
 }
